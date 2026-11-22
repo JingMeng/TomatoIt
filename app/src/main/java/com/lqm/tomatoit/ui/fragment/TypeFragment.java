@@ -1,9 +1,9 @@
 package com.lqm.tomatoit.ui.fragment;
 
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -21,8 +21,8 @@ import java.util.List;
 import butterknife.Bind;
 
 /**
- * user：lqm
- * desc：第二个模块，分类Fragment
+ * user锛歭qm
+ * desc锛氱浜屼釜妯″潡锛屽垎绫籉ragment
  */
 
 public class TypeFragment extends BaseFragment<TypeView, TypePresenter>
@@ -106,3 +106,4 @@ public class TypeFragment extends BaseFragment<TypeView, TypePresenter>
         }
     }
 }
+

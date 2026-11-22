@@ -1,9 +1,9 @@
 package com.lqm.tomatoit.ui.fragment;
 
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -24,8 +24,8 @@ import butterknife.Bind;
 import cn.bingoogolapple.bgabanner.BGABanner;
 
 /**
- * user：lqm
- * desc：第一个模块，主页Fragment
+ * user锛歭qm
+ * desc锛氱涓€涓ā鍧楋紝涓婚〉Fragment
  */
 
 public class HomeFragment extends BaseFragment<HomeView, HomePresenter>
@@ -78,8 +78,7 @@ public class HomeFragment extends BaseFragment<HomeView, HomePresenter>
 
     @Override
     public void getBannerDataSuccess(List<BannerBean> bannerData) {
-        //设置轮播图
-        mBannerView.setData(R.layout.item_banner, bannerData, null);
+        //璁剧疆杞挱鍥?        mBannerView.setData(R.layout.item_banner, bannerData, null);
         mBannerView.setAdapter(new BGABanner.Adapter<View, BannerBean>() {
             @Override
             public void fillBannerItem(BGABanner banner, View itemView, BannerBean model, int position) {
@@ -105,7 +104,7 @@ public class HomeFragment extends BaseFragment<HomeView, HomePresenter>
         swipeRefresh.setOnRefreshListener(this);
         mAdapter.setOnLoadMoreListener(this, rvContent);
 
-        //添加头部轮播图布局
+        //娣诲姞澶撮儴杞挱鍥惧竷灞€
         View headView = View.inflate(getActivity(), R.layout.layout_banner, null);
         mBannerView = (BGABanner) headView.findViewById(R.id.banner);
         mAdapter.addHeaderView(headView);
@@ -139,3 +138,4 @@ public class HomeFragment extends BaseFragment<HomeView, HomePresenter>
         mAdapter.setNewData(data);
     }
 }
+

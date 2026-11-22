@@ -23,6 +23,11 @@ import okhttp3.OkHttpClient;
  */
 
 public class App extends Application {
+    @Override
+    protected void attachBaseContext(android.content.Context base) {
+        super.attachBaseContext(base);
+        androidx.multidex.MultiDex.install(this);
+    }
 
     public static List<Activity> activities = new LinkedList<>();
 

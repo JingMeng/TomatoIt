@@ -48,7 +48,7 @@
 
     </RelativeLayout>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_collect"
         android:layout_width="match_parent"
         android:layout_height="100px"
@@ -66,9 +66,9 @@
             android:textColor="@color/main"
             android:textSize="@dimen/text_special_size" />
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_about"
         android:layout_width="match_parent"
         android:layout_height="100px"
@@ -86,9 +86,9 @@
             android:textColor="@color/main"
             android:textSize="@dimen/text_special_size" />
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_logou"
         android:layout_width="match_parent"
         android:layout_height="100px"
@@ -107,6 +107,6 @@
             android:textColor="@color/main"
             android:textSize="@dimen/text_special_size" />
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

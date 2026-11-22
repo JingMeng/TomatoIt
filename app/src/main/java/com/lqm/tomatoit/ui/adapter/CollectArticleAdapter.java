@@ -1,7 +1,7 @@
 package com.lqm.tomatoit.ui.adapter;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
@@ -20,10 +20,8 @@ import com.lqm.tomatoit.util.UIUtils;
 import java.util.List;
 
 /**
- * user：lqm
- * desc：我的收藏文章列表适配器
- *      （这个适配器跟ArticleListAdapter一样的，但是接口收藏列表接口返回的数据collect字段有问题，所以这里分开）
- */
+ * user锛歭qm
+ * desc锛氭垜鐨勬敹钘忔枃绔犲垪琛ㄩ€傞厤鍣? *      锛堣繖涓€傞厤鍣ㄨ窡ArticleListAdapter涓€鏍风殑锛屼絾鏄帴鍙ｆ敹钘忓垪琛ㄦ帴鍙ｈ繑鍥炵殑鏁版嵁collect瀛楁鏈夐棶棰橈紝鎵€浠ヨ繖閲屽垎寮€锛? */
 
 public class CollectArticleAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHolder> {
 
@@ -68,7 +66,7 @@ public class CollectArticleAdapter extends BaseQuickAdapter<ArticleBean, BaseVie
                 .subscribe(new RxObserver<String>() {
                     @Override
                     public void _onNext(String s) {
-                        T.showShort(mContext, "取消收藏");
+                        T.showShort(mContext, "鍙栨秷鏀惰棌");
                         getData().remove(position);
                         if (position != 0){
                             notifyItemRemoved(position);
@@ -79,8 +77,9 @@ public class CollectArticleAdapter extends BaseQuickAdapter<ArticleBean, BaseVie
 
                     @Override
                     public void _onError(String errorMessage) {
-                        T.showShort(mContext, "取消收藏失败");
+                        T.showShort(mContext, "鍙栨秷鏀惰棌澶辫触");
                     }
                 });
     }
 }
+

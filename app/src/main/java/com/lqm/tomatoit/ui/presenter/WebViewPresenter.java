@@ -34,7 +34,6 @@ public class WebViewPresenter extends BasePresenter<CommonWebView> {
         settings.setDefaultTextEncodingName("utf-8");
         settings.setLoadsImagesAutomatically(true);
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-        settings.setAppCacheEnabled(true);
         settings.setDomStorageEnabled(true);
 
         webView.setWebViewClient(new WebViewClient() {

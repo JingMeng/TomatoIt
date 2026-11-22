@@ -8,7 +8,7 @@ import android.util.AttributeSet;
  * @user  lqm
  * @desc  使用IConFont TextView
  */
-public class IconFontTextView extends android.support.v7.widget.AppCompatTextView {
+public class IconFontTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     private Context mContext;
 

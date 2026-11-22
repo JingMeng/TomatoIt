@@ -1,7 +1,7 @@
 package com.lqm.tomatoit.ui.activity;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.Spannable;
@@ -31,9 +31,8 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 /**
- * user：lqm
- * desc：搜索界面
- */
+ * user锛歭qm
+ * desc锛氭悳绱㈢晫闈? */
 
 public class SearchActivity extends BaseActivity<SearchView, SearchPresenter>
         implements SearchView, BaseQuickAdapter.RequestLoadMoreListener {
@@ -123,7 +122,7 @@ public class SearchActivity extends BaseActivity<SearchView, SearchPresenter>
                 public void onClick(View v) {
                     etSearch.setText(data.get(finalI).getName());
 
-                    // 将光标移至字符串尾部
+                    // 灏嗗厜鏍囩Щ鑷冲瓧绗︿覆灏鹃儴
                     CharSequence charSequence = etSearch.getText();
                     if (charSequence instanceof Spannable) {
                         Spannable spanText = (Spannable) charSequence;
@@ -179,3 +178,4 @@ public class SearchActivity extends BaseActivity<SearchView, SearchPresenter>
         }
     }
 }
+

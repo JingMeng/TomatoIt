@@ -1,14 +1,14 @@
 package com.lqm.tomatoit.widget;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
 /**
- * 一个包含WebView的Fragment，来自Android Sdk
+ * 涓€涓寘鍚玏ebView鐨凢ragment锛屾潵鑷狝ndroid Sdk
  */
 public class WebViewFragment extends Fragment {
     private WebView mWebView;
@@ -80,3 +80,4 @@ public class WebViewFragment extends Fragment {
         return mIsWebViewAvailable ? mWebView : null;
     }
 }
+

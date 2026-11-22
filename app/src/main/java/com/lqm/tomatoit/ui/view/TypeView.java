@@ -1,6 +1,6 @@
 package com.lqm.tomatoit.ui.view;
 
-import android.support.design.widget.TabLayout;
+import com.google.android.material.tabs.TabLayout;
 
 import com.lqm.tomatoit.model.pojo.ArticleBean;
 import com.lqm.tomatoit.ui.adapter.ArticleListAdapter;
@@ -9,8 +9,8 @@ import com.lqm.tomatoit.widget.AutoLinefeedLayout;
 import java.util.List;
 
 /**
- * user：lqm
- * desc：分类View
+ * user锛歭qm
+ * desc锛氬垎绫籚iew
  */
 
 public interface TypeView {
@@ -24,3 +24,4 @@ public interface TypeView {
     void getMoreDataSuccess(List<ArticleBean> data);
 
 }
+

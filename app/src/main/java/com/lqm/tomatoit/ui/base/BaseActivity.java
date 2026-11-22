@@ -2,7 +2,7 @@ package com.lqm.tomatoit.ui.base;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,13 +31,13 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AutoLa
 
         init();
 
-        //判断是否使用MVP模式
+        //鍒ゆ柇鏄惁浣跨敤MVP妯″紡
         mPresenter = createPresenter();
         if (mPresenter != null) {
-            mPresenter.attachView((V) this);//因为之后所有的子类都要实现对应的View接口
+            mPresenter.attachView((V) this);//鍥犱负涔嬪悗鎵€鏈夌殑瀛愮被閮借瀹炵幇瀵瑰簲鐨刅iew鎺ュ彛
         }
 
-        //子类不再需要设置布局ID，也不再需要使用ButterKnife.bind()
+        //瀛愮被涓嶅啀闇€瑕佽缃竷灞€ID锛屼篃涓嶅啀闇€瑕佷娇鐢˙utterKnife.bind()
         setContentView(provideContentViewId());
         ButterKnife.bind(this);
 
@@ -49,14 +49,14 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AutoLa
     }
 
     /**
-     * 解决4.4设置状态栏颜色之后，布局内容嵌入状态栏位置问题
+     * 瑙ｅ喅4.4璁剧疆鐘舵€佹爮棰滆壊涔嬪悗锛屽竷灞€鍐呭宓屽叆鐘舵€佹爮浣嶇疆闂
      */
     private void excuteStatesBar(){
         ViewGroup mContentView = (ViewGroup) getWindow().findViewById(Window.ID_ANDROID_CONTENT);
         View mChildView = mContentView.getChildAt(0);
         if (mChildView != null) {
-            //注意不是设置 ContentView 的 FitsSystemWindows,
-            // 而是设置 ContentView 的第一个子 View ，预留出系统 View 的空间.
+            //娉ㄦ剰涓嶆槸璁剧疆 ContentView 鐨?FitsSystemWindows,
+            // 鑰屾槸璁剧疆 ContentView 鐨勭涓€涓瓙 View 锛岄鐣欏嚭绯荤粺 View 鐨勭┖闂?
             mChildView.setFitsSystemWindows(true);
         }
     }
@@ -69,7 +69,7 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AutoLa
         }
     }
 
-    //在setContentView()调用之前调用，可以设置WindowFeature(如：this.requestWindowFeature(Window.FEATURE_NO_TITLE);)
+    //鍦╯etContentView()璋冪敤涔嬪墠璋冪敤锛屽彲浠ヨ缃甒indowFeature(濡傦細this.requestWindowFeature(Window.FEATURE_NO_TITLE);)
     public void init() {
     }
 
@@ -82,15 +82,14 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AutoLa
     public void initListener() {
     }
 
-    //用于创建Presenter和判断是否使用MVP模式(由子类实现)
+    //鐢ㄤ簬鍒涘缓Presenter鍜屽垽鏂槸鍚︿娇鐢∕VP妯″紡(鐢卞瓙绫诲疄鐜?
     protected abstract T createPresenter();
 
-    //得到当前界面的布局文件id(由子类实现)
+    //寰楀埌褰撳墠鐣岄潰鐨勫竷灞€鏂囦欢id(鐢卞瓙绫诲疄鐜?
     protected abstract int provideContentViewId();
 
     /**
-     * 显示等待提示框
-     */
+     * 鏄剧ず绛夊緟鎻愮ず妗?     */
     public Dialog showWaitingDialog(String tip) {
         hideWaitingDialog();
         View view = View.inflate(this, R.layout.dialog_waiting, null);
@@ -103,8 +102,7 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AutoLa
     }
 
     /**
-     * 隐藏等待提示框
-     */
+     * 闅愯棌绛夊緟鎻愮ず妗?     */
     public void hideWaitingDialog() {
         if (mDialogWaiting != null) {
             mDialogWaiting.dismiss();
@@ -113,3 +111,4 @@ public abstract class BaseActivity<V, T extends BasePresenter<V>> extends AutoLa
     }
 
 }
+

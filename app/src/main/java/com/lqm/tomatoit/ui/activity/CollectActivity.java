@@ -1,9 +1,9 @@
 package com.lqm.tomatoit.ui.activity;
 
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,9 +22,8 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 /**
- * user：lqm
- * desc：我的收藏界面
- */
+ * user锛歭qm
+ * desc锛氭垜鐨勬敹钘忕晫闈? */
 
 public class CollectActivity extends BaseActivity<CollectView, CollectPresenter> implements CollectView,
         SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
@@ -54,7 +53,7 @@ public class CollectActivity extends BaseActivity<CollectView, CollectPresenter>
 
     @Override
     public void initView() {
-        tvTitle.setText("我的收藏");
+        tvTitle.setText("鎴戠殑鏀惰棌");
 
         rvContent.setLayoutManager(new LinearLayoutManager(CollectActivity.this));
         mAdapter = new CollectArticleAdapter(CollectActivity.this, null);
@@ -126,3 +125,4 @@ public class CollectActivity extends BaseActivity<CollectView, CollectPresenter>
         });
     }
 }
+

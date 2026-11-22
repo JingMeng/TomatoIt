@@ -5,8 +5,8 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.NestedScrollView;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.widget.NestedScrollView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
@@ -29,9 +29,9 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 /**
- * user：lqm
- * desc：WebView界面，加载文章详情等
- * (tip:上滑隐藏topbar,因为webview焦点问题，这里在布局中用NestedScrollView，再动态添加webview)
+ * user锛歭qm
+ * desc锛歐ebView鐣岄潰锛屽姞杞芥枃绔犺鎯呯瓑
+ * (tip:涓婃粦闅愯棌topbar,鍥犱负webview鐒︾偣闂锛岃繖閲屽湪甯冨眬涓敤NestedScrollView锛屽啀鍔ㄦ€佹坊鍔爓ebview)
  */
 
 public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresenter>
@@ -102,7 +102,7 @@ public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresente
     protected void onStart() {
         super.onStart();
 
-        //获取webview
+        //鑾峰彇webview
         webView = mWebViewFragment.getWebView();
         mPresenter.setWebView(webView, mUrl);
     }
@@ -120,8 +120,7 @@ public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresente
                 webView.goBack();
                 return true;
             } else {
-                finish();//退出程序
-                return true;
+                finish();//閫€鍑虹▼搴?                return true;
             }
         }
         return super.onKeyDown(keyCode, event);
@@ -136,15 +135,15 @@ public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresente
                 finish();
                 break;
             case R.id.tv_other:
-                //更多按钮
+                //鏇村鎸夐挳
                 View popView = View.inflate(WebViewActivity.this, R.layout.popup_webview_more, null);
                 mMorePopWindow = new CustomPopWindow.PopupWindowBuilder(this)
                         .setView(popView)
-                        .enableBackgroundDark(false) //弹出popWindow时，背景是否变暗
+                        .enableBackgroundDark(false) //寮瑰嚭popWindow鏃讹紝鑳屾櫙鏄惁鍙樻殫
                         .create()
                         .showAsDropDown(tvOther, -430, -10);
 
-                //分享
+                //鍒嗕韩
                 popView.findViewById(R.id.tv_shape).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -152,7 +151,7 @@ public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresente
                         mMorePopWindow.dissmiss();
                     }
                 });
-                //复制链接
+                //澶嶅埗閾炬帴
                 popView.findViewById(R.id.tv_copy_link).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -162,7 +161,7 @@ public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresente
                         mMorePopWindow.dissmiss();
                     }
                 });
-                //使用系统浏览器打开
+                //浣跨敤绯荤粺娴忚鍣ㄦ墦寮€
                 popView.findViewById(R.id.tv_open_out).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -175,3 +174,4 @@ public class WebViewActivity extends BaseActivity<CommonWebView, WebViewPresente
         }
     }
 }
+

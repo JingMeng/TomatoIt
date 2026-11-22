@@ -1,7 +1,7 @@
 package com.lqm.tomatoit.ui.presenter;
 
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentActivity;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.FragmentActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;

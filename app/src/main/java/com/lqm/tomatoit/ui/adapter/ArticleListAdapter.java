@@ -1,7 +1,7 @@
 package com.lqm.tomatoit.ui.adapter;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
@@ -29,9 +29,8 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * user：lqm
- * desc：文章列表适配器
- */
+ * user锛歭qm
+ * desc锛氭枃绔犲垪琛ㄩ€傞厤鍣? */
 
 public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHolder> {
 
@@ -74,15 +73,14 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
 
     }
 
-    //收藏文章
+    //鏀惰棌鏂囩珷
     private void collectArticle(TextView tvCollect, ArticleBean bean) {
         if (PrefUtils.getBoolean(mContext, AppConst.IS_LOGIN_KEY, false) == false) {
-            T.showShort(mContext, "请先登录");
+            T.showShort(mContext, "璇峰厛鐧诲綍");
             return;
         }
         if (bean.isCollect()) {
-            //已经收藏，点击取消收藏
-            unCollectArticler(bean, tvCollect);
+            //宸茬粡鏀惰棌锛岀偣鍑诲彇娑堟敹钘?            unCollectArticler(bean, tvCollect);
         } else {
             collectArticler(bean, tvCollect);
         }
@@ -101,7 +99,7 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
                     @Override
                     public void onNext(ResponseData<String> responseData) {
                         if (responseData.getErrorCode() == 0) {
-                            T.showShort(mContext, "收藏成功");
+                            T.showShort(mContext, "鏀惰棌鎴愬姛");
                             bean.setCollect(true);
                             tvCollect.setText(UIUtils.getString(R.string.ic_collect_sel));
                             tvCollect.setTextColor(UIUtils.getColor(R.color.main));
@@ -113,7 +111,7 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
 
                     @Override
                     public void onError(Throwable e) {
-                        T.showShort(mContext, "收藏失败");
+                        T.showShort(mContext, "鏀惰棌澶辫触");
                     }
 
                     @Override
@@ -130,7 +128,7 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
                 .subscribe(new RxObserver<String>() {
                     @Override
                     public void _onNext(String s) {
-                        T.showShort(mContext, "取消收藏");
+                        T.showShort(mContext, "鍙栨秷鏀惰棌");
                         bean.setCollect(false);
                         tvCollect.setText(UIUtils.getString(R.string.ic_collect_nor));
                         tvCollect.setTextColor(UIUtils.getColor(R.color.text3));
@@ -138,9 +136,10 @@ public class ArticleListAdapter extends BaseQuickAdapter<ArticleBean, BaseViewHo
 
                     @Override
                     public void _onError(String errorMessage) {
-                        T.showShort(mContext, "取消收藏失败");
+                        T.showShort(mContext, "鍙栨秷鏀惰棌澶辫触");
                     }
                 });
     }
 
 }
+

@@ -1,15 +1,14 @@
 package com.lqm.tomatoit.ui.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
 /**
  * @user  lqm
- * @desc  ViewPager+Fragment 的适配器
- */
+ * @desc  ViewPager+Fragment 鐨勯€傞厤鍣? */
 
 public class FragPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragments;
@@ -30,3 +29,4 @@ public class FragPagerAdapter extends FragmentPagerAdapter {
         return mFragments.size();
     }
 }
+
